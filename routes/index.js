@@ -16,6 +16,7 @@ router.get('/searchProduct', function(req, res) {
     }
     else {
 */
+        // replace process.env.AWS_KEY,   process.env.AWS_SECRET,    process.env.AWS_AssociateID with your values
         var prodAdv = aws.createProdAdvClient(process.env.AWS_KEY, process.env.AWS_SECRET, process.env.AWS_AssociateID);
 
         prodAdv.call("ItemSearch", {
