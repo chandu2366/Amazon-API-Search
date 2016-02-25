@@ -37,10 +37,8 @@ myApp.controller('myController', function($scope, $http, searchFactory){
 
             searchFactory.get('/searchProduct', config).then(function(results){
 
-                //     console.log(req.data);
                 $scope.records = results.data.Items.TotalPages;
                 $scope.bookdata = results.data.Items.Item;
-                //     console.log($scope.bookdata);
 
                 $scope.bookdata.forEach(function(e){
                     var author = e.ItemAttributes.Author;
