@@ -1,0 +1,23 @@
+<header>
+    <div class="well">
+        <select class="form-control" id="search_category"></select><input id="search" type="text" class="form-control" ng-model="searchText"><button class="btn btn-default" ng-click="goSearch();">Search</button>
+    </div>
+</header>
+<div class="container">
+
+    <div class="row"  ng-repeat="dat in bookdata">
+        <div class="leftNavContainer">
+            <div class="col-md-5"><a href="{{dat.DetailPageURL}}"  target="_blank"><img ng-src="{{dat.MediumImage.URL}}"></a></div>
+        </div>
+        <div class="rightSideContainer">
+            <div class="col-md-7">
+                <span id="titleurl"><a href="{{dat.DetailPageURL}}" target="_blank">{{dat.ItemAttributes.Title}}</a></span><p> by {{dat.ItemAttributes.Author}}</p>
+                <span>Paperback</span>
+                <p class="a-color-price">{{dat.Offers.Offer.OfferListing.Price.FormattedPrice}}</p>
+                <span>More Choices</span>
+                <p class="a-color-price">{{dat.OfferSummary.LowestNewPrice.FormattedPrice}} <a href="{{dat.Offers.MoreOffersUrl}}" target="_blank">used & new</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
